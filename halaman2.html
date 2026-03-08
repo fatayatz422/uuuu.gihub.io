@@ -224,13 +224,14 @@
             margin-bottom: 10px;
         }
 
-        /* Pagination */
+        /* PAGINATION YANG BENER (TOMBOl 1 2 3 4) */
         .pagination {
             grid-column: 1 / -1;
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .page-btn {
@@ -241,6 +242,7 @@
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s;
+            display: inline-block;
         }
 
         .page-btn:hover {
@@ -253,10 +255,15 @@
             background: #FFD700;
             color: #006400;
             cursor: default;
+            pointer-events: none;
         }
 
-        .page-btn.prev {
+        .page-btn.prev, .page-btn.next {
             background: #8B4513;
+        }
+
+        .page-btn.prev:hover, .page-btn.next:hover {
+            background: #A0522D;
         }
 
         /* Footer */
@@ -323,6 +330,14 @@
             
             .sidebar {
                 position: static;
+            }
+            
+            .pagination {
+                gap: 8px;
+            }
+            
+            .page-btn {
+                padding: 8px 15px;
             }
         }
     </style>
@@ -401,16 +416,6 @@
                 <p><strong>Kesultanan Aceh Darussalam</strong> mencapai puncak kejayaan di bawah Sultan Iskandar Muda (1607-1636). Wilayahnya meliputi Sumatera dan Semenanjung Malaya. Ia dikenal gigih melawan Portugis .</p>
             </div>
 
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 1500-1904</span>
-                <p><strong>Kesultanan Palembang</strong> menguasai Sumatera Selatan, terkenal dengan kesenian dan kebudayaan Melayu .</p>
-            </div>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 1523-1911</span>
-                <p><strong>Kesultanan Siak Sri Indrapura</strong> di Riau, menjadi pusat perdagangan dan kebudayaan Melayu .</p>
-            </div>
-
             <h3>📍 Jawa</h3>
 
             <div class="timeline-item">
@@ -429,35 +434,8 @@
             </div>
 
             <div class="timeline-item">
-                <span class="timeline-year">🔹 1568-1586</span>
-                <p><strong>Kerajaan Pajang</strong> berdiri di Jawa Tengah di bawah Sultan Hadiwijaya, sebagai penerus Demak .</p>
-            </div>
-
-            <div class="timeline-item">
                 <span class="timeline-year">🔹 1586-1755</span>
                 <p><strong>Kesultanan Mataram</strong> mencapai puncak kejayaan di bawah Sultan Agung (1613-1645). Ia berhasil menyatukan hampir seluruh Jawa dan menyerang VOC di Batavia (1628-1629) .</p>
-            </div>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 1755 M</span>
-                <p>Perjanjian Giyanti membagi Mataram menjadi <strong>Kasunanan Surakarta</strong> dan <strong>Kesultanan Yogyakarta</strong> .</p>
-            </div>
-
-            <h3>📍 Kalimantan</h3>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 Abad 15-19</span>
-                <p><strong>Kesultanan Banjar</strong> di Kalimantan Selatan, terkenal dengan lada dan hasil hutan. Sultan pertama adalah Raden Samudera (Sultan Suriansyah) .</p>
-            </div>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 Abad 16-19</span>
-                <p><strong>Kesultanan Kutai Kartanegara</strong> di Kalimantan Timur, merupakan perubahan dari kerajaan Hindu menjadi Islam .</p>
-            </div>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 Abad 17-19</span>
-                <p><strong>Kesultanan Pontianak</strong> didirikan oleh Syarif Abdurrahman Alkadrie, menjadi pusat perdagangan dan kebudayaan Melayu .</p>
             </div>
 
             <h3>📍 Sulawesi</h3>
@@ -465,16 +443,6 @@
             <div class="timeline-item">
                 <span class="timeline-year">🔹 Abad 16-20</span>
                 <p><strong>Kesultanan Gowa-Tallo (Makassar)</strong> di Sulawesi Selatan. Sultan Hasanuddin (1653-1669) dijuluki "Ayam Jantan dari Timur" karena perlawanannya terhadap VOC .</p>
-            </div>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 Abad 16-20</span>
-                <p><strong>Kesultanan Bone</strong> di bawah kepemimpinan Arung Palakka, kemudian menjadi sekutu VOC melawan Gowa .</p>
-            </div>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 Abad 17-19</span>
-                <p><strong>Kesultanan Ternate dan Tidore</strong> di Maluku, terkenal sebagai penghasil rempah-rempah (cengkeh dan pala) yang menjadi rebutan bangsa Eropa .</p>
             </div>
 
             <h2 id="kedatangan-eropa">🇪🇺 Kedatangan Bangsa Eropa & Awal Kolonialisme</h2>
@@ -486,33 +454,6 @@
                 <p>Alfonso de Albuquerque memimpin armada Portugis merebut <strong>Malaka</strong>, pusat perdagangan rempah-rempah. Ini menandai awal kolonialisme Eropa di Asia Tenggara .</p>
             </div>
 
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 1512 M</span>
-                <p>Portugis tiba di Maluku di bawah pimpinan Francisco Serrão dan menjalin hubungan dengan Ternate. Mereka membangun benteng dan memonopoli perdagangan cengkeh .</p>
-            </div>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 1522 M</span>
-                <p>Portugis menjalin perjanjian dengan Kerajaan Sunda (Pajajaran) dan diizinkan membangun benteng di Sunda Kelapa. Namun batal karena Fatahillah merebut Sunda Kelapa tahun 1527 .</p>
-            </div>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 1575 M</span>
-                <p>Sultan Baabullah dari Ternate berhasil mengusir Portugis dari Maluku. Portugis mundur ke wilayah Timor Timur .</p>
-            </div>
-
-            <h3>🔸 Spanyol (1521 - 1663)</h3>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 1521 M</span>
-                <p>Ekspedisi Magellan (dilanjutkan Sebastian Elcano) tiba di Maluku dan bersaing dengan Portugis. Spanyol kemudian menjalin hubungan dengan Tidore .</p>
-            </div>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 1529 M</span>
-                <p>Perjanjian Zaragoza antara Spanyol dan Portugis dengan pengawasan Paus. Maluku jatuh ke tangan Portugis, Spanyol mundur ke Filipina .</p>
-            </div>
-
             <h3>🔸 VOC (Vereenigde Oostindische Compagnie) - 1602-1799</h3>
 
             <div class="info-box">
@@ -521,33 +462,8 @@
             </div>
 
             <div class="timeline-item">
-                <span class="timeline-year">🔹 1596 M</span>
-                <p>Ekspedisi pertama Belanda di bawah Cornelis de Houtman mendarat di Banten. Mereka disambut dingin karena sikap kasar de Houtman .</p>
-            </div>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 1605 M</span>
-                <p>Belanda merebut benteng Portugis di Ambon, menguasai perdagangan rempah .</p>
-            </div>
-
-            <div class="timeline-item">
                 <span class="timeline-year">🔹 1619 M</span>
                 <p>Jan Pieterszoon Coen merebut Jayakarta dan mendirikan <strong>Batavia</strong> (sekarang Jakarta) sebagai pusat kekuasaan VOC .</p>
-            </div>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 1628-1629 M</span>
-                <p>Sultan Agung dari Mataram menyerang Batavia dua kali, namun gagal karena persenjataan dan logistik .</p>
-            </div>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 1667 M</span>
-                <p>Perjanjian Bongaya memaksa Sultan Hasanuddin mengakui kekuasaan VOC di Sulawesi .</p>
-            </div>
-
-            <div class="timeline-item">
-                <span class="timeline-year">🔹 1677 M</span>
-                <p>Mataram terpecah dan menjadi boneka VOC setelah Perjanjian Jepara .</p>
             </div>
 
             <div class="warning-box">
@@ -555,5 +471,77 @@
                 <p>Diterapkan Van den Bosch. Rakyat wajib menanam komoditas ekspor (kopi, tebu, nila) 1/5 tanahnya. Praktiknya jauh lebih kejam: kelaparan terjadi di Cirebon (1843), Demak (1849), Grobogan (1850) .</p>
             </div>
 
-            <div class="timeline-item">
-             
+            <h2 id="kolonial">⚔️ Hindia Belanda & Perlawanan Rakyat (1800-1942)</h2>
+
+            <h3>🔸 Perlawanan Rakyat</h3>
+
+            <table class="history-table">
+                <tr>
+                    <th>Perlawanan</th>
+                    <th>Tahun</th>
+                    <th>Tokoh</th>
+                </tr>
+                <tr>
+                    <td>Perang Padri</td>
+                    <td>1821-1837</td>
+                    <td>Tuanku Imam Bonjol</td>
+                </tr>
+                <tr>
+                    <td>Perang Diponegoro</td>
+                    <td>1825-1830</td>
+                    <td>Pangeran Diponegoro</td>
+                </tr>
+                <tr>
+                    <td>Perang Aceh</td>
+                    <td>1873-1904</td>
+                    <td>Teuku Umar, Cut Nyak Dien</td>
+                </tr>
+            </table>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>📜 Garis Waktu Islam & Kolonial</h3>
+            <ul class="timeline-mini">
+                <li><a href="#"><span class="year">674 M</span> - Perkampungan Arab</a></li>
+                <li><a href="#"><span class="year">1267 M</span> - Samudera Pasai</a></li>
+                <li><a href="#"><span class="year">1475 M</span> - Demak berdiri</a></li>
+                <li><a href="#"><span class="year">1511 M</span> - Portugis kuasai Malaka</a></li>
+                <li><a href="#"><span class="year">1602 M</span> - VOC berdiri</a></li>
+                <li><a href="#"><span class="year">1619 M</span> - Batavia didirikan</a></li>
+                <li><a href="#"><span class="year">1825-1830</span> - Perang Diponegoro</a></li>
+                <li><a href="#"><span class="year">1873-1904</span> - Perang Aceh</a></li>
+            </ul>
+
+            <div class="fun-fact">
+                <h4>💡 Fakta Unik</h4>
+                <p>Sunan Kalijaga menggunakan wayang kulit sebagai media dakwah. Ia menciptakan cerita "Jimat Kalimasada" yang merupakan akronim dari Kalimat Syahadat .</p>
+            </div>
+
+            <h3 style="margin-top: 25px;">📖 Navigasi Cerita</h3>
+            <ul class="timeline-mini">
+                <li><a href="index.html">🌋 Halaman 1: Prasejarah & Hindu-Buddha</a></li>
+                <li><a href="halaman2.html">☪️ Halaman 2: Islam & Kolonial (Sedang Dibaca)</a></li>
+                <li><a href="halaman3.html">🇮🇩 Halaman 3: Pergerakan Nasional & Kemerdekaan</a></li>
+                <li><a href="halaman4.html">📈 Halaman 4: Orde Lama, Orde Baru & Reformasi</a></li>
+            </ul>
+        </aside>
+
+        <!-- PAGINATION YANG BENER: TOMBOL 1 2 3 4 LENGKAP -->
+        <div class="pagination">
+            <a href="index.html" class="page-btn prev">← Sebelumnya</a>
+            <a href="index.html" class="page-btn">1</a>
+            <a href="halaman2.html" class="page-btn active">2</a>
+            <a href="halaman3.html" class="page-btn">3</a>
+            <a href="halaman4.html" class="page-btn">4</a>
+            <a href="halaman3.html" class="page-btn next">Selanjutnya →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Sejarah Indonesia Lengkap</p>
+        <p>Disusun dari berbagai sumber: Wikipedia, Kemendikbud, arsip sejarah nasional</p>
+    </footer>
+</body>
+    </html>
