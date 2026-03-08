@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Lengkap Indonesia - Dari Nusantara Hingga Reformasi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f0e8;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #8B4513;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            background: #A0522D;
+        }
+
+        /* Header Hero */
+        .hero {
+            background: linear-gradient(135deg, #8B4513, #D2691E);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .main-content h2 {
+            color: #8B4513;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 10px;
+            margin: 30px 0 20px;
+            font-size: 1.8rem;
+        }
+
+        .main-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .main-content h3 {
+            color: #A0522D;
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+        }
+
+        .main-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .timeline-item {
+            margin: 20px 0;
+            padding-left: 20px;
+            border-left: 3px solid #FFD700;
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: #8B4513;
+            font-size: 1.2rem;
+        }
+
+        .info-box {
+            background: #f9f3e9;
+            border-left: 4px solid #D2691E;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .info-box h4 {
+            color: #8B4513;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 80px;
+        }
+
+        .sidebar h3 {
+            color: #8B4513;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .timeline-mini {
+            list-style: none;
+        }
+
+        .timeline-mini li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .timeline-mini a {
+            color: #2c3e50;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .timeline-mini a:hover {
+            color: #D2691E;
+            padding-left: 5px;
+        }
+
+        .timeline-mini .year {
+            font-weight: bold;
+            color: #8B4513;
+            margin-right: 8px;
+        }
+
+        .fun-fact {
+            background: #e6d5b8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .fun-fact h4 {
+            color: #8B4513;
+            margin-bottom: 10px;
+        }
+
+        /* Pagination */
+        .pagination {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .page-btn {
+            background: #8B4513;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .page-btn:hover {
+            background: #A0522D;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .page-btn.active {
+            background: #FFD700;
+            color: #8B4513;
+            cursor: default;
+        }
+
+        .page-btn.disabled {
+            background: #ccc;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+        }
+
+        /* Kutipan */
+        .quote {
+            font-style: italic;
+            color: #666;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">SEJARAH INDONESIA</a>
+            <ul class="nav-menu">
+                <li><a href="#" class="active">Beranda</a></li>
+                <li><a href="#prasejarah">Prasejarah</a></li>
+                <li><a href="#hindu-buddha">Hindu-Buddha</a></li>
+                <li><a href="#islam">Islam</a></li>
+                <li><a href="#kolonial">Kolonial</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Perjalanan Sejarah Indonesia</h1>
+        <p>Dari masa prasejarah, kerajaan Nusantara, penjajahan, hingga era reformasi - menyaksikan bagaimana bangsa ini terbentuk melalui ribuan tahun peradaban</p>
+    </section>
+
+    <!-- Main Content Container -->
+    <div class="container" id="halaman1">
+        <!-- Konten Utama -->
+        <main class="main-content">
+            <h2 id="prasejarah">🌋 Masa Prasejarah (Sebelum Masehi - 400 M)</h2>
+            
+            <div class="info-box">
+                <h4>🌏 Pembentukan Geologis</h4>
+                <p>Sekitar 90 juta tahun lalu, Pulau Sumatera terbentuk sebagai bagian pertama Indonesia yang muncul ke permukaan. Pada masa Pleistosen (sekitar 2 juta tahun lalu), bentuk kepulauan Indonesia modern mulai muncul, masih terhubung dengan daratan Asia dalam bentuk Sundaland [citation:1].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1,7 Juta - 500.000 SM</span>
+                <p>Indonesia dihuni oleh <strong>Homo erectus</strong> yang dikenal sebagai "Manusia Jawa" (Pithecanthropus erectus), ditemukan oleh Eugene Dubois di Trinil, Jawa Timur [citation:1][citation:3].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 160.000 - 50.000 SM</span>
+                <p>Pulau Flores dihuni oleh spesies manusia kerdil <strong>Homo floresiensis</strong> ("Manusia Flores") yang ditemukan di Liang Bua [citation:1].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 74.000 SM</span>
+                <p>Letusan supervolcano Gunung Toba di Sumatera terjadi, salah satu letusan terbesar dalam sejarah bumi yang mempengaruhi iklim global [citation:1].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 51.200 Tahun Lalu</span>
+                <p>Gambar cadas (lukisan gua) tertua di dunia ditemukan di Leang Karampuang, Maros, Sulawesi Selatan, menunjukkan kreativitas manusia purba yang sangat maju. Penemuan ini mengubah pemahaman tentang sejarah seni manusia [citation:2].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 45.000 SM</span>
+                <p>Kedatangan <strong>Homo sapiens</strong> (manusia modern) ke Indonesia, menunjukkan keahlian maritim yang tinggi dalam menyeberangi lautan [citation:1].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 20.000 - 10.000 SM</span>
+                <p>Berakhirnya Zaman Es menyebabkan naiknya permukaan air laut, menenggelamkan Sundaland dan memisahkan Pulau Jawa, Kalimantan, dan Sumatra [citation:1].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 3.000 SM</span>
+                <p>Bangsa <strong>Austronesia</strong> mulai mengkolonisasi Asia Tenggara, membawa kultur Neolitikum, teknik pertanian padi, dan bahasa Austronesia yang menjadi akar bahasa-bahasa di Indonesia [citation:1][citation:3].</p>
+            </div>
+
+            <div class="quote">
+                "Indonesia adalah tempat lahir sejarah kreativitas manusia, dengan gambar cadas tertua di dunia yang berusia 51.200 tahun." - Penelitian Griffith University & BRIN [citation:2]
+            </div>
+
+            <h2 id="hindu-buddha">🛕 Era Kerajaan Hindu-Buddha (Abad 1 - 15 M)</h2>
+
+            <h3>🔸 Kerajaan Awal (Abad 1-5 M)</h3>
+            
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 ±200 SM</span>
+                <p>Para cendekiawan India menulis tentang <strong>Dwipantara</strong> atau kerajaan Hindu Jawa Dwipa di Pulau Jawa dan Sumatra atau Swarna Dwipa [citation:3].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 130 M</span>
+                <p><strong>Kerajaan Salakanagara</strong> berdiri di Jawa Barat, dianggap sebagai kerajaan pertama di Nusantara berdasarkan catatan Wangsakerta [citation:1].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 Abad ke-4</span>
+                <p><strong>Kerajaan Kutai</strong> berdiri di Kalimantan Timur, kerajaan Hindu tertua di Indonesia yang meninggalkan bukti sejarah berupa Prasasti Yupa (batu bertulis) [citation:1][citation:9]. Raja Mulawarman disebut sebagai raja terbesar yang menghadirkan brahmana dari India [citation:3].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 425 M</span>
+                <p>Ajaran <strong>Buddhisme</strong> mencapai Sumatra, menandai masuknya agama Buddha ke Nusantara [citation:1].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 Abad ke-5</span>
+                <p><strong>Kerajaan Tarumanegara</strong> menguasai Jawa Barat, dibuktikan dengan Prasasti Ciaruteun yang memuat tapak kaki Raja Purnawarman [citation:1][citation:9].</p>
+            </div>
+
+            <h3>🔸 Sriwijaya: Kemaharajaan Maritim (Abad 7-14)</h3>
+            
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 682 M</span>
+                <p><strong>Prasasti Kedukan Bukit</strong> ditulis di Sriwijaya (Palembang), menjadi bukti tertua keberadaan Kerajaan Sriwijaya [citation:1].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 670-an M</span>
+                <p>Penjelajah Tiongkok, I-Tsing (Yijing), mengunjungi ibu kota Sriwijaya di Palembang dan melaporkan bahwa Sriwijaya menjadi pusat pembelajaran Buddha [citation:3][citation:7].</p>
+            </div>
+
+            <div class="info-box">
+                <h4>⚓ Kejayaan Sriwijaya</h4>
+                <p>Pada puncak kejayaannya, Sriwijaya menguasai wilayah hingga Jawa Barat dan Semenanjung Melayu. Menjadi pusat perdagangan dan pembelajaran agama Buddha yang disegani di Asia Tenggara [citation:3].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 718 M</span>
+                <p>Raja Sriwijaya Jambi, Srindrawarman, mengirim surat kepada Khalifah Umar bin Abdul Aziz meminta dikirimkan mubalig untuk menjelaskan Islam. Dua tahun kemudian (720 M), ia masuk Islam - menandai kontak awal Nusantara dengan Islam [citation:3].</p>
+            </div>
+
+            <h3>🔸 Mataram Kuno & Jawa Tengah (Abad 8-10)</h3>
+            
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 732 M</span>
+                <p>Dinasti Sanjaya didirikan menurut <strong>Prasasti Canggal</strong> [citation:1].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 824 M</span>
+                <p><strong>Candi Borobudur</strong> dibangun oleh Samaratungga dari Dinasti Syailendra. Candi Buddha terbesar di dunia ini selesai dibangun sekitar tahun 825 M [citation:1].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 850 M</span>
+                <p><strong>Candi Prambanan</strong> (Rara Jonggrang) dibangun, candi Hindu terbesar di Indonesia yang didedikasikan untuk Trimurti: Siwa, Wisnu, dan Brahma [citation:1].</p>
+            </div>
+
+            <h3>🔸 Majapahit: Puncak Kejayaan Nusantara (Abad 13-16)</h3>
+            
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1222 M</span>
+                <p>Ken Arok menyerang Kerajaan Kediri dan membunuh Kertajaya, kemudian mendirikan Kerajaan <strong>Singhasari</strong> [citation:1].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1293 M</span>
+                <p>Mongolia menginvasi Jawa (ekspedisi Kubilai Khan). Raden Wijaya berhasil memukul mundur pasukan Mongol dan mendirikan <strong>Kerajaan Majapahit</strong> [citation:1].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1331-1364 M</span>
+                <p>Masa keemasan Majapahit di bawah pemerintahan Hayam Wuruk (1350-1389) dengan Mahapatih <strong>Gajah Mada</strong>. Sumpah Palapa Gajah Mada: "Lamun huwus kalah nusantara, isun amukti palapa" (Jika telah mengalahkan Nusantara, saya baru akan beristirahat) [citation:3].</p>
+            </div>
+
+            <div class="info-box">
+                <h4>🌍 Wilayah Majapahit</h4>
+                <p>Di bawah Gajah Mada, Majapahit menguasai wilayah yang sebagian besarnya adalah Indonesia modern beserta hampir seluruh Semenanjung Melayu. Kekuasaan ini dicatat dalam kitab <strong>Nagarakertagama</strong> (1365) karya Mpu Prapanca [citation:3][citation:7].</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1404-1406 M</span>
+                <p><strong>Perang Paregreg</strong> antara Bhre Wirabhumi melawan Wikramawardhana, perang saudara yang melemahkan Majapahit [citation:1].</p>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>📜 Garis Waktu Singkat</h3>
+            <ul class="timeline-mini">
+                <li><a href="#"><span class="year">⏳ 1,7 jt SM</span> - Homo erectus (Manusia Jawa)</a></li>
+                <li><a href="#"><span class="year">🏝️ 74.000 SM</span> - Letusan Gunung Toba</a></li>
+                <li><a href="#"><span class="year">🎨 51.200 th lalu</span> - Lukisan gua tertua</a></li>
+                <li><a href="#"><span class="year">🚣 45.000 SM</span> - Kedatangan Homo sapiens</a></li>
+                <li><a href="#"><span class="year">⛩️ 130 M</span> - Salakanagara</a></li>
+                <li><a href="#"><span class="year">🏯 Abad 4</span> - Kutai</a></li>
+                <li><a href="#"><span class="year">⚓ 682 M</span> - Sriwijaya</a></li>
+                <li><a href="#"><span class="year">🛕 824 M</span> - Borobudur</a></li>
+                <li><a href="#"><span class="year">🗿 1293 M</span> - Majapahit</a></li>
+            </ul>
+
+            <div class="fun-fact">
+                <h4>💡 Fakta Unik Prasejarah</h4>
+                <p>Indonesia memiliki gambar cadas (lukisan gua) tertua di dunia yang berusia 51.200 tahun, ditemukan di Sulawesi Selatan. Ini mengalahkan temuan serupa di Eropa! [citation:2]</p>
+            </div>
+
+            <div class="fun-fact">
+                <h4>📚 Sumber Belajar Sejarah</h4>
+                <p>Untuk mendalami sejarah Indonesia, kunjungi platform seperti Kanvas Purbakala (BRIN & Google Arts & Culture) yang menyediakan tur virtual 360° ke 24 situs gua prasejarah [citation:2].</p>
+            </div>
+
+            <h3 style="margin-top: 25px;">📖 Navigasi Cerita</h3>
+            <ul class="timeline-mini">
+                <li><a href="#prasejarah">🌋 Halaman 1: Prasejarah & Hindu-Buddha (Sedang Dibaca)</a></li>
+                <li><a href="halaman2.html">☪️ Halaman 2: Kerajaan Islam & Kolonialisme</a></li>
+                <li><a href="halaman3.html">🇮🇩 Halaman 3: Pergerakan Nasional & Kemerdekaan</a></li>
+                <li><a href="halaman4.html">📈 Halaman 4: Orde Lama, Orde Baru & Reformasi</a></li>
+            </ul>
+        </aside>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="#" class="page-btn active">1</a>
+            <a href="halaman2.html" class="page-btn">2</a>
+            <a href="halaman3.html" class="page-btn">3</a>
+            <a href="halaman4.html" class="page-btn">4</a>
+            <a href="halaman2.html" class="page-btn">Next →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Sejarah Indonesia Lengkap</p>
+        <p>Disusun dari berbagai sumber: Wikipedia, penelitian BRIN, Griffith University, dan arsip sejarah nasional</p>
+        <p><small>#IndonesiaPusatPeradaban #SejarahNusantara</small></p>
+    </footer>
+</body>
+  </html>
