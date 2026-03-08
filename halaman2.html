@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman 2: Kerajaan Islam & Kolonial - Sejarah Indonesia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f0e8;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #8B4513;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            background: #A0522D;
+        }
+
+        /* Header Hero */
+        .hero {
+            background: linear-gradient(135deg, #006400, #228B22);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .main-content h2 {
+            color: #006400;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 10px;
+            margin: 30px 0 20px;
+            font-size: 1.8rem;
+        }
+
+        .main-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .main-content h3 {
+            color: #228B22;
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+        }
+
+        .main-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .timeline-item {
+            margin: 20px 0;
+            padding-left: 20px;
+            border-left: 3px solid #FFD700;
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: #006400;
+            font-size: 1.2rem;
+        }
+
+        .info-box {
+            background: #f0f7e8;
+            border-left: 4px solid #228B22;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .info-box h4 {
+            color: #006400;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #cc7b00;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .warning-box h4 {
+            color: #b35900;
+            margin-bottom: 10px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 80px;
+        }
+
+        .sidebar h3 {
+            color: #006400;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .timeline-mini {
+            list-style: none;
+        }
+
+        .timeline-mini li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .timeline-mini a {
+            color: #2c3e50;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .timeline-mini a:hover {
+            color: #228B22;
+            padding-left: 5px;
+        }
+
+        .timeline-mini .year {
+            font-weight: bold;
+            color: #006400;
+            margin-right: 8px;
+        }
+
+        .fun-fact {
+            background: #e8f0d5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .fun-fact h4 {
+            color: #006400;
+            margin-bottom: 10px;
+        }
+
+        /* Pagination */
+        .pagination {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .page-btn {
+            background: #006400;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .page-btn:hover {
+            background: #228B22;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .page-btn.active {
+            background: #FFD700;
+            color: #006400;
+            cursor: default;
+        }
+
+        .page-btn.prev {
+            background: #8B4513;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            opacity: 0.8;
+        }
+
+        /* Quote */
+        .quote {
+            font-style: italic;
+            color: #555;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #FFD700;
+        }
+
+        /* Table */
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .history-table th {
+            background: #006400;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .history-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .history-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">SEJARAH INDONESIA</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html#prasejarah">Prasejarah</a></li>
+                <li><a href="index.html#hindu-buddha">Hindu-Buddha</a></li>
+                <li><a href="halaman2.html" class="active">Islam</a></li>
+                <li><a href="#kolonial">Kolonial</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>☪️ Kerajaan Islam & Masa Kolonial (Abad 13 - 1942)</h1>
+        <p>Perjalanan masuknya Islam, kejayaan kerajaan-kerajaan Islam Nusantara, hingga penderitaan rakyat di bawah cengkeraman penjajahan Eropa</p>
+    </section>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Konten Utama -->
+        <main class="main-content">
+            <h2 id="masuk-islam">🕋 Masuknya Islam ke Nusantara</h2>
+            
+            <div class="info-box">
+                <h4>📚 Teori Masuknya Islam</h4>
+                <p><strong>1. Teori Gujarat (India):</strong> Islam datang dari Gujarat abad ke-13. <br>
+                <strong>2. Teori Persia:</strong> Islam datang dari Persia (Iran) karena kesamaan budaya dengan tradisi Persia. <br>
+                <strong>3. Teori Arab (Mekkah):</strong> Islam langsung dari Arab abad ke-7, dibawa pedagang Arab. <br>
+                <strong>4. Teori Cina:</strong> Islam dibawa pedagang dan laksamana Cina Muslim seperti Cheng Ho.</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 Abad ke-7 M</span>
+                <p>Catatan Dinasti Tang menyebutkan adanya pemukiman Arab Muslim di pesisir Sumatera (Barus). Ini adalah bukti awal kontak Nusantara dengan Islam .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 674 M</span>
+                <p>Di pantai barat Sumatera sudah terdapat perkampungan Arab Muslim (Arab Masse) yang didatangi pedagang Islam dari Timur Tengah .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 718 M</span>
+                <p>Raja Sriwijaya, Srindrawarman, mengirim surat kepada Khalifah Umar bin Abdul Aziz meminta dikirimkan mubalig. Dua tahun kemudian ia masuk Islam .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 Abad ke-11</span>
+                <p>Ditemukan makam Fatimah binti Maimun di Leran (Gresik) yang berangka tahun 1082, bukti keberadaan Muslim di Jawa .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 Abad ke-13</span>
+                <p>Islam mulai berkembang pesat di pesisir Sumatera dan Jawa, ditandai dengan berdirinya kerajaan-kerajaan Islam pertama .</p>
+            </div>
+
+            <h2 id="kerajaan-islam">👑 Kerajaan-Kerajaan Islam Nusantara</h2>
+
+            <h3>📍 Sumatera</h3>
+            
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1267 M</span>
+                <p><strong>Kerajaan Samudera Pasai</strong> berdiri di Aceh, kerajaan Islam pertama di Indonesia. Sultan pertamanya adalah Malik Al-Saleh (Marah Silu). Kerajaan ini menjadi pusat perdagangan dan pembelajaran Islam yang dikunjungi musafir Ibnu Battuta pada 1345 .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 Abad 15-16</span>
+                <p><strong>Kesultanan Aceh Darussalam</strong> mencapai puncak kejayaan di bawah Sultan Iskandar Muda (1607-1636). Wilayahnya meliputi Sumatera dan Semenanjung Malaya. Ia dikenal gigih melawan Portugis .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1500-1904</span>
+                <p><strong>Kesultanan Palembang</strong> menguasai Sumatera Selatan, terkenal dengan kesenian dan kebudayaan Melayu .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1523-1911</span>
+                <p><strong>Kesultanan Siak Sri Indrapura</strong> di Riau, menjadi pusat perdagangan dan kebudayaan Melayu .</p>
+            </div>
+
+            <h3>📍 Jawa</h3>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1475-1546</span>
+                <p><strong>Kerajaan Demak</strong> kerajaan Islam pertama di Jawa. Didirikan oleh Raden Patah (1475-1518) dengan dukungan Wali Songo. Demak menjadi pusat penyebaran Islam di Jawa dan berhasil menaklukkan Majapahit yang sudah lemah .</p>
+            </div>
+
+            <div class="info-box">
+                <h4>🧕 Wali Songo (Sembilan Wali)</h4>
+                <p>Tokoh penyebar Islam di Jawa: Sunan Gresik (Maulana Malik Ibrahim), Sunan Ampel, Sunan Bonang, Sunan Drajat, Sunan Kudus, Sunan Kalijaga, Sunan Muria, Sunan Gunung Jati, Sunan Giri. Mereka menggunakan pendekatan budaya (wayang, gamelan, tembang) untuk menyebarkan Islam .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1527 M</span>
+                <p>Fatahillah (Sunan Gunung Jati) berhasil mengusir Portugis dari Sunda Kelapa dan mengganti namanya menjadi Jayakarta (Jakarta) .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1568-1586</span>
+                <p><strong>Kerajaan Pajang</strong> berdiri di Jawa Tengah di bawah Sultan Hadiwijaya, sebagai penerus Demak .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1586-1755</span>
+                <p><strong>Kesultanan Mataram</strong> mencapai puncak kejayaan di bawah Sultan Agung (1613-1645). Ia berhasil menyatukan hampir seluruh Jawa dan menyerang VOC di Batavia (1628-1629) .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1755 M</span>
+                <p>Perjanjian Giyanti membagi Mataram menjadi <strong>Kasunanan Surakarta</strong> dan <strong>Kesultanan Yogyakarta</strong> .</p>
+            </div>
+
+            <h3>📍 Kalimantan</h3>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 Abad 15-19</span>
+                <p><strong>Kesultanan Banjar</strong> di Kalimantan Selatan, terkenal dengan lada dan hasil hutan. Sultan pertama adalah Raden Samudera (Sultan Suriansyah) .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 Abad 16-19</span>
+                <p><strong>Kesultanan Kutai Kartanegara</strong> di Kalimantan Timur, merupakan perubahan dari kerajaan Hindu menjadi Islam .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 Abad 17-19</span>
+                <p><strong>Kesultanan Pontianak</strong> didirikan oleh Syarif Abdurrahman Alkadrie, menjadi pusat perdagangan dan kebudayaan Melayu .</p>
+            </div>
+
+            <h3>📍 Sulawesi</h3>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 Abad 16-20</span>
+                <p><strong>Kesultanan Gowa-Tallo (Makassar)</strong> di Sulawesi Selatan. Sultan Hasanuddin (1653-1669) dijuluki "Ayam Jantan dari Timur" karena perlawanannya terhadap VOC .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 Abad 16-20</span>
+                <p><strong>Kesultanan Bone</strong> di bawah kepemimpinan Arung Palakka, kemudian menjadi sekutu VOC melawan Gowa .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 Abad 17-19</span>
+                <p><strong>Kesultanan Ternate dan Tidore</strong> di Maluku, terkenal sebagai penghasil rempah-rempah (cengkeh dan pala) yang menjadi rebutan bangsa Eropa .</p>
+            </div>
+
+            <h2 id="kedatangan-eropa">🇪🇺 Kedatangan Bangsa Eropa & Awal Kolonialisme</h2>
+
+            <h3>🔸 Portugis (1511 - 1605)</h3>
+            
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1511 M</span>
+                <p>Alfonso de Albuquerque memimpin armada Portugis merebut <strong>Malaka</strong>, pusat perdagangan rempah-rempah. Ini menandai awal kolonialisme Eropa di Asia Tenggara .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1512 M</span>
+                <p>Portugis tiba di Maluku di bawah pimpinan Francisco Serrão dan menjalin hubungan dengan Ternate. Mereka membangun benteng dan memonopoli perdagangan cengkeh .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1522 M</span>
+                <p>Portugis menjalin perjanjian dengan Kerajaan Sunda (Pajajaran) dan diizinkan membangun benteng di Sunda Kelapa. Namun batal karena Fatahillah merebut Sunda Kelapa tahun 1527 .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1575 M</span>
+                <p>Sultan Baabullah dari Ternate berhasil mengusir Portugis dari Maluku. Portugis mundur ke wilayah Timor Timur .</p>
+            </div>
+
+            <h3>🔸 Spanyol (1521 - 1663)</h3>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1521 M</span>
+                <p>Ekspedisi Magellan (dilanjutkan Sebastian Elcano) tiba di Maluku dan bersaing dengan Portugis. Spanyol kemudian menjalin hubungan dengan Tidore .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1529 M</span>
+                <p>Perjanjian Zaragoza antara Spanyol dan Portugis dengan pengawasan Paus. Maluku jatuh ke tangan Portugis, Spanyol mundur ke Filipina .</p>
+            </div>
+
+            <h3>🔸 VOC (Vereenigde Oostindische Compagnie) - 1602-1799</h3>
+
+            <div class="info-box">
+                <h4>🏢 Kongsi Dagang Belanda</h4>
+                <p>VOC didirikan 20 Maret 1602 sebagai perusahaan dagang yang memiliki hak istimewa: mencetak uang, membentuk tentara, membuat perjanjian, dan menjalankan pemerintahan di wilayah jajahan .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1596 M</span>
+                <p>Ekspedisi pertama Belanda di bawah Cornelis de Houtman mendarat di Banten. Mereka disambut dingin karena sikap kasar de Houtman .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1605 M</span>
+                <p>Belanda merebut benteng Portugis di Ambon, menguasai perdagangan rempah .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1619 M</span>
+                <p>Jan Pieterszoon Coen merebut Jayakarta dan mendirikan <strong>Batavia</strong> (sekarang Jakarta) sebagai pusat kekuasaan VOC .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1628-1629 M</span>
+                <p>Sultan Agung dari Mataram menyerang Batavia dua kali, namun gagal karena persenjataan dan logistik .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1667 M</span>
+                <p>Perjanjian Bongaya memaksa Sultan Hasanuddin mengakui kekuasaan VOC di Sulawesi .</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">🔹 1677 M</span>
+                <p>Mataram terpecah dan menjadi boneka VOC setelah Perjanjian Jepara .</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>💀 Sistem Tanam Paksa (Cultuurstelsel) 1830-1870</h4>
+                <p>Diterapkan Van den Bosch. Rakyat wajib menanam komoditas ekspor (kopi, tebu, nila) 1/5 tanahnya. Praktiknya jauh lebih kejam: kelaparan terjadi di Cirebon (1843), Demak (1849), Grobogan (1850) .</p>
+            </div>
+
+            <div class="timeline-item">
+             
